@@ -1,28 +1,19 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import * as actions from '../actions';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 
 class CommentBox extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      comment: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+  state = {
+    comment: '',
   }
 
-  handleChange(event) {
-    this.setState({ comment: event.target.value });
-  }
+  handleChange = event => this.setState({ comment: event.target.value })
 
-  handleSubmit(event) {
-    event.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault()
 
-    this.props.saveComment(this.state.comment);
-    this.setState({ comment: '' });
+    this.props.saveComment(this.state.comment)
+    this.setState({ comment: '' })
   }
 
   render() {
@@ -41,4 +32,4 @@ class CommentBox extends Component {
   }
 }
 
-export default connect(null, actions)(CommentBox);
+export default connect(null, actions)(CommentBox)
