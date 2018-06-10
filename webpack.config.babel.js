@@ -1,6 +1,7 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
